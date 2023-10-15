@@ -13,17 +13,36 @@ class Contenu(Enum):
 
 def creer_case(etat=Contenu.VIDE, animal=None):
     # TODO: Créer et retourner un dictionnaire représentant une case. Utiliser les arguments pour initialiser l'état et l'animal dans la case.
-    pass
+    
+    case = {'etat' : etat, 'animal' :  animal} 
+    
+    return case
+
+def caca():
+    print('caca')
+
+
 
 
 def creer_grille(nb_lignes, nb_colonnes):
+    vide = creer_case()
+    matrice = [[vide] * nb_colonnes] * nb_lignes
+            
+    grille = {"matrice" : matrice, "nb_proies": 0,
+          "nb_predateurs": 0,
+          "nb_lignes": nb_lignes,
+          "nb_colonnes": nb_colonnes}
+    return grille
     # TODO: Créer une matrice 2D de cases vides et la retourner sous forme de dictionnaire
     # TODO: Dans le dictionnaire, ajouter des métadonnées décrites dans l'énoncé (nombre de proies, de prédateurs, etc.)
-    pass
+    
+   
+
 
 
 def obtenir_population(grille):
     # TODO: Retourner un tuple contenant le nombre actuel de proies et de prédateurs dans la grille (Tuple[Int, Int])
+    
     pass
 
 
