@@ -18,28 +18,48 @@ def creer_case(etat=Contenu.VIDE, animal=None):
     
     return case
 
-def caca():
-    print('caca')
+
+  
 
 
 
 
 def creer_grille(nb_lignes, nb_colonnes):
-    vide = creer_case()
-    matrice = [[vide] * nb_colonnes] * nb_lignes
+    
+    matrice = [[creer_case() for _ in range(nb_colonnes)] for _ in range(nb_lignes)]
             
-    grille = {"matrice" : matrice, "nb_proies": 0,
+    x = {"matrice" : matrice, "nb_proies": 0,
           "nb_predateurs": 0,
           "nb_lignes": nb_lignes,
           "nb_colonnes": nb_colonnes}
-    return grille
+    return x
     # TODO: Créer une matrice 2D de cases vides et la retourner sous forme de dictionnaire
     # TODO: Dans le dictionnaire, ajouter des métadonnées décrites dans l'énoncé (nombre de proies, de prédateurs, etc.)
     
-   
+def obtenir_case(grille, ligne, colonne):
+    case = grille['matrice'][ligne][colonne]
+    return case
+    pass
+
+def obtenir_animal(grille, ligne, colonne):
+    animal = grille['matrice'][ligne][colonne]['animal']
+    return animal
+    pass
+
+def definir_animal(grille, animal, ligne, col):
+    # TODO: Placer un animal (sous forme de dictionnaire) sur la case indiquée par les coordonnées (ligne, col).
 
 
+    grille['matrice'][ligne][col]['animal'] = animal
+    pass
 
+
+def definir_case(grille, case, ligne, col):
+    grille['matrice'][ligne][col] = case
+    pass
+       
+    
+    
 def obtenir_population(grille):
     # TODO: Retourner un tuple contenant le nombre actuel de proies et de prédateurs dans la grille (Tuple[Int, Int])
     

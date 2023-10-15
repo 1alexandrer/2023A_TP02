@@ -5,7 +5,7 @@ def creer_animal(age=0, jrs_gestation=0, energie=MIN_ENERGIE, disponible=True):
     
     
     animal = {'age' : age, 'jrs_gestation' :  jrs_gestation, 'energie' : energie, 'disponible' : disponible} 
-    print('caca')
+    
     return animal
 
 
@@ -44,7 +44,7 @@ def obtenir_disponibilite(animal):
 
 def incrementer_age(animal, puberte):
     # TODO: Incrémenter l'âge de l'animal de 1
-    if animal['age'] > puberte:
+    if animal['age'] >= puberte:
         animal['jrs_gestation'] += 1
     animal['age'] += 1
     # TODO: Si l'animal est plus âgé que l'âge de la puberté, incrémenter son nombre de jours de gestation de 1
@@ -61,7 +61,7 @@ def definir_jours_gestation(animal, jrs_gest):
 
 def ajouter_energie(animal, valeur):
     # TODO: Ajouter la quantité d'énergie donnée (valeur) à l'énergie actuelle de l'animal (Int)
-    animal['energie'] = valeur
+    animal['energie'] += valeur
     pass
 
 
